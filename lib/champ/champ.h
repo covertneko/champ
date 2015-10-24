@@ -19,31 +19,37 @@ struct note
 
 namespace john
 {
-  // A4, B4, F4, and G4
+  // In the key of B flat
   enum Note
   {
-    A = 440,
-    B = 494,
-    F = 349,
-    G = 392,
+    B = 932, //B = 466,
+    A = 880, //A = 440,
+    G = 793, //G = 392,
+    F = 698, //F = 349,
     REST = 0
   };
 
   const note cena[] =
   {
+    // Bar 1
     {REST, Eighth},
-    {B, Eighth},
+    {B, Sixteenth},
+    {REST, Sixteenth},
     {A, Sixteenth},
     {F, Sixteenth},
     {REST, Sixteenth},
     {G, Half},
     {REST, Sixteenth},
+
+    // Bar 2
     {REST, Eighth},
-    {G, Eighth},
+    {G, Sixteenth},
+    {REST, Sixteenth},
     {A, Sixteenth},
     {F, Sixteenth},
     {REST, Sixteenth},
-    {G, Half}
+    {G, Half},
+    {REST, Sixteenth}
   };
 }
 

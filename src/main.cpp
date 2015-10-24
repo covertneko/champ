@@ -38,7 +38,7 @@ void playSequence(note const seq[], unsigned int noteCount)
     }
 
     tone(BUZZER_PIN, seq[i].frequency, duration);
-    delay((int)(duration * 1.10));
+    delay((int)(duration * 1));
     noTone(BUZZER_PIN);
   }
 }
@@ -55,7 +55,7 @@ void loop()
 
   if (buttonState == HIGH)
   {
-    playSequence(john::cena, 14);
+    playSequence(john::cena, 16);
   }
   else
   {
