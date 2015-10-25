@@ -1,56 +1,49 @@
 #ifndef __CHAMP_H_INC
 #define __CHAMP_H_INC
 
-enum NoteType
-{
-  Whole = 1,
-  Half = 2,
-  Quarter = 4,
-  Eighth = 8,
-  Sixteenth = 16
-};
+#include "music.h"
 
-
-struct note
+namespace champ
 {
-  unsigned int frequency;
-  NoteType type;
-};
-
-namespace john
-{
-  // In the key of B flat
-  enum Note
+  namespace john
   {
-    B = 932, //B = 466,
-    A = 880, //A = 440,
-    G = 793, //G = 392,
-    F = 698, //F = 349,
-    REST = 0
-  };
+    const unsigned int BPM = 82;
 
-  const note cena[] =
-  {
-    // Bar 1
-    {REST, Eighth},
-    {B, Sixteenth},
-    {REST, Sixteenth},
-    {A, Sixteenth},
-    {F, Sixteenth},
-    {REST, Sixteenth},
-    {G, Half},
-    {REST, Sixteenth},
+    // In the key of B flat
+    enum Tone
+    {
+      B = 932,
+      A = 880,
+      G = 793,
+      F = 698,
+      REST = 0
+    };
 
-    // Bar 2
-    {REST, Eighth},
-    {G, Sixteenth},
-    {REST, Sixteenth},
-    {A, Sixteenth},
-    {F, Sixteenth},
-    {REST, Sixteenth},
-    {G, Half},
-    {REST, Sixteenth}
-  };
+    // The Time Is Now.
+    const Note _notes[] = {
+      // Measure 1
+      {REST, Eighth},
+      {B, Sixteenth},
+      {REST, Sixteenth},
+      {A, Sixteenth},
+      {F, Sixteenth},
+      {REST, Sixteenth},
+      {G, Half},
+      {REST, Sixteenth},
+
+      // Measure 2
+      {REST, Eighth},
+      {G, Sixteenth},
+      {REST, Sixteenth},
+      {A, Sixteenth},
+      {F, Sixteenth},
+      {REST, Sixteenth},
+      {G, Half},
+      {REST, Sixteenth}
+    };
+
+    const Sequence cena = Sequence(BPM, 4, _notes, 16);
+  }
 }
 
 #endif
